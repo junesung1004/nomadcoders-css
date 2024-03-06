@@ -1,0 +1,25 @@
+.father {
+  display: grid;
+  min-height: 50vh;
+  row-gap: 20px;
+  column-gap: 10px;
+
+  /* 2열을 생성할거고 각각 1fr 줄거야. */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2행을 생성할거고 각각 1fr 줄거야. */
+  grid-template-rows: repeat(2, 1fr);
+
+  /* 그리드로 2열 2행을 만들었지만, child는 10개인 상태 */
+  /* 바로 이 때 grid template rows 속성이 등장한다. */
+  /* 지정한건 2행이였지만 새로운 행이 추가될 때 속성을 정해준다. */
+  grid-auto-rows: 1fr;
+  grid-auto-flow: column;
+}
+.child {
+  background-color: tomato;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
