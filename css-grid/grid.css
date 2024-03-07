@@ -1,11 +1,30 @@
-.father {
+/* .father {
   display: grid;
   grid-template-columns: [apple] 100px [banana] 200px [brocoli] 50px [mango];
   grid-template-rows: [cat] 200px [dog] 100px [monkey];
   gap: 10px;
+} */
+
+.father {
+  display: grid;
+  min-height: 50vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-flow: column;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 10px;
+
+  /* 그리드의 안의 공간들을 어떻게 차지할건지 속성을 주는 코드 */
+  /* justify-items: start;
+  align-items: center; */
+
+  place-items: center start;
 }
 
 .child {
+  width: 50px;
+  height: 50px;
   background-color: tomato;
   display: flex;
   color: white;
@@ -14,20 +33,11 @@
   font-size: 28px;
 }
 
-.child:last-child {
+.child:nth-child(6) {
   background-color: aqua;
-  /* column(열의 시작과 끝을 변경하여 배치를 조정할 수 있다.) */
-  /* 브라우저에서 개발자도구를 키고 grid를 누르면 line 생기는데 숫자의 위치를 확인! */
-  /* grid-column-start: 2; */
-  /* grid-column-end: 4;  --> -1로 표현도 가능하다  === grid-column-end: -1 */
-  /* grid-column-start: 2; grid-column-end: 4; 2줄의 코드를 밑에 1줄로 표현 가능하다*/
-  grid-column: banana / mango;
-}
 
-.child:first-child {
-  background-color: lime;
-  /* row(행의 시작과 끝을 변경하여 배치를 조정할 수 있다.) */
-  /* grid-row-start: 1;
-  grid-row-end: -1; */
-  grid-row: cat / monkey;
+  /* align-self: center;
+  justify-self: center; */
+  place-self: center center;
+  grid-column: span 2;
 }
