@@ -1,0 +1,43 @@
+/* .father {
+  display: grid;
+  grid-template-columns: [apple] 100px [banana] 200px [brocoli] 50px [mango];
+  grid-template-rows: [cat] 200px [dog] 100px [monkey];
+  gap: 10px;
+} */
+
+.father {
+  display: grid;
+  min-height: 50vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-flow: column;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 10px;
+
+  /* 그리드의 안의 공간들을 어떻게 차지할건지 속성을 주는 코드 */
+  /* justify-items: start;
+  align-items: center; */
+
+  place-items: center start;
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  background-color: tomato;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.child:nth-child(6) {
+  background-color: aqua;
+
+  /* align-self: center;
+  justify-self: center; */
+  place-self: center center;
+  grid-column: span 2;
+}

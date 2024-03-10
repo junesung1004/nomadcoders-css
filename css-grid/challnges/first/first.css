@@ -1,0 +1,67 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  grid-template:
+    "header header header" 1fr
+    "aside aside main" 3fr
+    "footer footer footer" 2.5fr / 1fr 1fr 1fr;
+
+  grid-gap: 10px;
+
+  background-color: #dde1d4;
+  padding: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  max-width: 650px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #000;
+  color: white;
+  font-weight: 600;
+  grid-area: header;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+aside {
+  background-color: tomato;
+  grid-area: aside;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  font-size: 148px;
+  font-weight: bold;
+}
+
+main {
+  background-color: tomato;
+  grid-area: main;
+}
+
+footer {
+  background-color: tomato;
+  grid-area: footer;
+  padding: 10px;
+  padding-top: 0;
+}
+
+footer h1 {
+  font-size: 164px;
+  font-weight: bold;
+}
+
+footer p {
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
